@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://primarysignal.com/cnb/testing swiping.ipa</string>
+					<string>http://primarysignal.com/cnb/testingswiping.ipa</string>
 				</dict>
 			</array>
 			<key>metadata</key>
@@ -23,7 +23,7 @@
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>CupSystem</string>
+				<string>CNB</string>
 			</dict>
 		</dict>
 	</array>
