@@ -78,7 +78,6 @@ body {
 }
 
 #lynx { 
-    height: auto;  
     float: left;
     margin-top: 100px;
     /*margin: 0 auto; */
@@ -102,11 +101,10 @@ body {
 
 #stargazer { 
     background: url(../assets/section_background_03.png) no-repeat bottom; 
-    height: 600px; 
+    height: 600px;
     width: 1200px; 
     float: left;
     position: relative; 
-    /*padding: 300 325px;*/
     color: #fff;
     bottom: 0;
 }
