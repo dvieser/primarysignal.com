@@ -13,3 +13,10 @@ $(document).ready(function(){
 });
 
 document.createElement("section");
+
+function processEmail(obj) {
+	var $emailAddress = $("input[name=email]").val();
+	alert($emailAddress);
+	if ($emailAddress == "" || $emailAddress == "astronaut@example.com") {
+	}
+}
