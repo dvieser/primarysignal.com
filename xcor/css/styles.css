@@ -48,21 +48,25 @@ h2 {
 .input_field {
   font-family: 'Open Sans', sans-serif;
   font-size: 40px;
+  font-weight: normal;
 }
 
 .input_text {
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
+  font-weight: normal;
 }
 
 .tagline {
   font-family: 'AeroExtendedItalic', sans-serif;
   font-size: 14pt;
+  font-weight: normal;
 }
 
 .tiny_text {
   font-family: "Arial", sans-serif;
   font-size: 10px;
+  font-weight: normal;
 }
 
 html,
