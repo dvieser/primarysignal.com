@@ -17,7 +17,7 @@
 /* fonts */
 h1 {
   font-family: 'AeroExtendedItalic', sans-serif;
-  font-size: 22pt;
+  font-size: 18pt;
   font-weight: normal;
 }
 
@@ -35,7 +35,8 @@ h2 {
 
 .intro {
   font-family: 'Open Sans', sans-serif;
-  font-size: 10pt;
+  font-size: 12pt;
+  line-height: 1.5em;
   font-weight: 300;
 }
 
@@ -112,14 +113,9 @@ body {
   top: 100px;
 }
 
-#home > div.container p {
-  line-height: 0.5;
-}
-
 #home > div.container .intro {
-  width: 570px;
+  width: 370px;
   margin-bottom: 40px;
-  line-height: 1.25;
 }
 
 #home a .link:hover {
