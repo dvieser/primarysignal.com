@@ -4,8 +4,6 @@
 </head>
 <body>
 
-<img src="gafsite.png" style="width:100%"/>
-
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #D71920;
@@ -27,8 +25,8 @@
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-		embedded_svc.settings.defaultMinimizedText = 'Claims Expert Chat'; //(Defaults to Chat with an Expert)
-		embedded_svc.settings.disabledMinimizedText = 'Claims Expert Offline'; //(Defaults to Agent Offline)
+		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
 		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
 		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
@@ -46,17 +44,17 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://mygaf--devorbit2.my.salesforce.com',
-			'https://devorbit2-livechat-gaf.cs15.force.com/liveAgentSetupFlow',
+			'https://mygaf--devorbit.my.salesforce.com',
+			'https://devorbit-livechat-gaf.cs43.force.com/liveAgentSetupFlow',
 			gslbBaseURL,
-			'00De0000005X5cF',
+			'00D63000000HpTS',
 			'Warranty_Claims_Chat',
 			{
-				baseLiveAgentContentURL: 'https://c.la1-c1cs-iad.salesforceliveagent.com/content',
-				deploymentId: '572e0000000CbJ4',
-				buttonId: '573e0000000CbjC',
-				baseLiveAgentURL: 'https://d.la1-c1cs-iad.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'Warranty_Claims_Chat',
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-ph2.salesforceliveagent.com/content',
+				deploymentId: '572630000004Gny',
+				buttonId: '573630000004Hlt',
+				baseLiveAgentURL: 'https://d.la1-c1cs-ph2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I6300000000IyEAI_1773b963312',
 				isOfflineSupportEnabled: true
 			}
 		);
@@ -64,7 +62,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://mygaf--devorbit2.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://mygaf--devorbit.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
