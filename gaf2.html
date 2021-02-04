@@ -7,11 +7,11 @@
 
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #D12713;
+		background-color: #d71920;
 		font-family: "Salesforce Sans", sans-serif;
 	}
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #D12713;
+		outline: 1px solid #d71920;
 	}
 	@font-face {
 		font-family: 'Salesforce Sans';
@@ -27,7 +27,7 @@
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+		embedded_svc.settings.disabledMinimizedText = 'Sorry, all Service Agents are currently offline'; //(Defaults to Agent Offline)
 
 		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
 		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
@@ -45,17 +45,17 @@
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://mygaf--qaorbit.my.salesforce.com',
-			'https://qaorbit-livechat-gaf.cs18.force.com/liveAgent',
+			'https://mygaf--chatdeptst.my.salesforce.com',
+			'https://chatdeptst-livechat-gaf.cs29.force.com/liveAgent',
 			gslbBaseURL,
-			'00D1100000C6zTW',
+			'00D0r0000008dfG',
 			'Warranty_Claims_Chat',
 			{
-				baseLiveAgentContentURL: 'https://c.la1-c1cs-iad.salesforceliveagent.com/content',
-				deploymentId: '5721100000005q8',
-				buttonId: '5731100000006v6',
-				baseLiveAgentURL: 'https://d.la1-c1cs-iad.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I1100000000TIEAY_1774c2cea9b',
+				baseLiveAgentContentURL: 'https://c.la3-c1cs-ia2.salesforceliveagent.com/content',
+				deploymentId: '5720r000000CaTh',
+				buttonId: '5730r000000CaUV',
+				baseLiveAgentURL: 'https://d.la3-c1cs-ia2.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I0r000000CaU1EAK_17749ca933e',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -63,7 +63,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://mygaf--qaorbit.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://mygaf--chatdeptst.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
