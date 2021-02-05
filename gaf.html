@@ -6,16 +6,8 @@
 <img src="gafsite.png" style="width:100%"/>
 
 <style type='text/css'>
-
-
-
-
-
-	.offlineSupportUI .formContent:before{content:'We are currently unavailable for chat.'; float:left; width:100%; display:block; margin: 10px; text-align: center; }
-	.offlineSupportUI .formContent:after{content:'Please visit https://www.gaf.com/en-us/about-us/contact/residential-claims-center to start a claim or check the status of an existing claim'; float:left; width: 100%; display:block; margin: 10px; text-align: center; }
 	.offlineSupportUI .formContent .fieldList, .offlineSupportUI .buttonWrapper {display: none}
-	 
-
+	.offline-chat-content {float:left; width:80%; display:block; margin: 30px 10% 20px 10%; text-align: center;}
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #D71920;
 		font-family: "Salesforce Sans", sans-serif;
@@ -33,24 +25,8 @@
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
+		embedded_svc.settings.language = 'en-US';
+		embedded_svc.settings.offlineSupportMinimizedText = 'Agent Offline';
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
@@ -69,6 +45,27 @@
 				isOfflineSupportEnabled: true
 			}
 		);
+		
+		embedded_svc.addEventHandler("afterMaximize", function(data) {
+	        var topDiv = document.createElement('div');
+	        var topDivText = document.createTextNode("We are currently unavailable for chat.");
+	        topDiv.appendChild(topDivText);
+	        topDiv.setAttribute('class', "offline-chat-content");
+	        topDiv.appendChild(document.createElement('br'));
+	        topDiv.appendChild(document.createElement('br'));
+			topDiv.appendChild(document.createTextNode("Please visit the "));
+
+	        var linkElement = document.createElement('a');
+			var linkText = document.createTextNode("Residential Claims Center");
+	        linkElement.setAttribute('href', "https://www.gaf.com/en-us/about-us/contact/residential-claims-center");
+	        linkElement.appendChild(linkText);
+	        topDiv.appendChild(linkElement);
+
+			topDiv.appendChild(document.createTextNode(" to start a claim or check the status of an existing claim."));
+
+			var offlineContentNode = document.querySelectorAll(".offlineSupportUI .formContent");
+	        offlineContentNode[0].appendChild(topDiv);
+		});
 	};
 
 	if (!window.embedded_svc) {
