@@ -8,6 +8,7 @@
 <style type='text/css'>
 	.offlineSupportUI .formContent .fieldList, .offlineSupportUI .buttonWrapper {display: none}
 	.offline-chat-content {float:left; width:80%; display:block; margin: 30px 10% 20px 10%; text-align: center;}
+	.offlineSupportUI .formContent .banner-image { width: 100%; height: 200px; }
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #D71920;
 		font-family: "Salesforce Sans", sans-serif;
@@ -47,7 +48,15 @@
 		);
 		
 		embedded_svc.addEventHandler("afterMaximize", function(data) {
+			var offlineContentNode = document.querySelectorAll(".offlineSupportUI .formContent")[0];
+
+	        var backgroundImage = document.createElement('img');
+	        backgroundImage.setAttribute('src',"https://www.gaf.ca/Residential_Roofing/Shingles/Timberline_Ultra_HD/GAF_Timberline_HD_Shakewood_Shown_For_Color.jpg");
+	        backgroundImage.setAttribute('class',"banner-image");
+	        offlineContentNode.appendChild(backgroundImage);
+
 	        var topDiv = document.createElement('div');
+
 	        var topDivText = document.createTextNode("We are currently unavailable for chat.");
 	        topDiv.appendChild(topDivText);
 	        topDiv.setAttribute('class', "offline-chat-content");
@@ -63,8 +72,7 @@
 
 			topDiv.appendChild(document.createTextNode(" to start a claim or check the status of an existing claim."));
 
-			var offlineContentNode = document.querySelectorAll(".offlineSupportUI .formContent");
-	        offlineContentNode[0].appendChild(topDiv);
+	        offlineContentNode.appendChild(topDiv);
 		});
 	};
 
