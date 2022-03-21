@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+</head>
+<body>
+
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+</style>
+<script src="https://collins--dev.my.salesforce.com/lightning/lightning.out.js"></script>
+
+<script type='text/javascript'>
+    var component; //Variable for Lightning Out Component
+    //Create Lightning Component
+    $Lightning.use("c:SalesRequest", function() {
+        $Lightning.createComponent("c:SalesRequest", { },
+                                   "LightningContainer",
+                                   function(cmp) {
+                                       component = cmp;
+                                       console.log('Component created');
+                                   });
+    });
+     
+    //Method to call Lightning Component Method
+ //    var getWelcomeMessage = function(){
+ //        component.welcomeMsgMethod({message : "Welcome to Salesforce Ohana", developerGroup: "Bengaluru"}, "Biswajeet Samal");
+ //    }
+
+
+	
+	// $Lightning.use(appName="c:SalesRequest" callback="" lightningEndPointURI="https://collins--salesdev.lightning.force.com");
+</script>
+
+</body>
+</html>
