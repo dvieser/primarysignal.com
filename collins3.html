@@ -16,28 +16,24 @@
 
     <div style="width:100%;height:100px;" id="LightningContainer"/>
 
-<script src="https://collins--salesdev.lightning.force.com/lightning/lightning.out.js"></script>
+<script src="https://collins--salesdev.my.salesforce.com/lightning/lightning.out.js"></script>
 
 <script type='text/javascript'>
-    var component; //Variable for Lightning Out Component
-    //Create Lightning Component
-    $Lightning.use("c:SalesRequest", function() {
-        $Lightning.createComponent("c:SalesRequest", { },
-                                   "LightningContainer",
-                                   function(cmp) {
-                                       component = cmp;
-                                       console.log('Component created');
-                                   });
-    });
-     
-    //Method to call Lightning Component Method
- //    var getWelcomeMessage = function(){
- //        component.welcomeMsgMethod({message : "Welcome to Salesforce Ohana", developerGroup: "Bengaluru"}, "Biswajeet Samal");
- //    }
 
+    $Lightning.use("c:SalesRequestApp",    // name of the Lightning app
+        function() {                  // Callback once framework and app loaded
+            $Lightning.createComponent(
+                "c:SalesRequest", // top-level component of your app
+                { },                  // attributes to set on the component when created
+                "LightningContainer",   // the DOM location to insert the component
+                function(cmp) {
+                    // callback when component is created and active on the page
+                }
+            );
+        },
+        'https://salesdev-collins.cs32.force.com/test'  // Experience Cloud site endpoint
+    );
 
-
-	// $Lightning.use(appName="c:SalesRequest" callback="" lightningEndPointURI="https://collins--salesdev.lightning.force.com");
 </script>
 
 </body>
