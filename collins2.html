@@ -18,13 +18,13 @@
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.language = 'en'; //For example, enter 'en' or 'en-US'
 
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
 		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+		embedded_svc.settings.storageDomain = 'primarysignal.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
 		// Settings for Flows
 
@@ -33,10 +33,10 @@
 
 		embedded_svc.init(
 			'https://collins--salesdev.my.salesforce.com',
-			'https://salesdev-collins.cs32.force.com/test',
+			'https://salesdev-collins.cs32.force.com/salesrequest',
 			gslbBaseURL,
 			'00Dr00000003QzG',
-			'test',
+			'SalesRequestDeployment',
 			{
 				
 			}
