@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+
+<div style="width:100%;height:100px;" id="LightningContainer"/>
+
+<script src="https://dvieser-gartner-dev-ed.my.site.com/lightning/lightning.out.js"></script>
+
+<script type='text/javascript'>
+
+    $Lightning.use("c:createCaseApp",
+        function() {
+            $Lightning.createComponent(
+                "c:createCaseDemo",
+                { },
+                "LightningContainer",
+                function(cmp) { }
+            );
+        },
+        'https://dvieser-gartner-dev-ed.my.site.com/demo'
+    );
+</script>
+
+</body>
+</html>
