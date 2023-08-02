@@ -1,23 +1,26 @@
 <html>
 <head>
-    <script type='text/javascript' src='https://c.la3-c1-ia7.salesforceliveagent.com/content/g/js/58.0/deployment.js'></script>
-<script type='text/javascript'>
-liveagent.init('https://d.la3-c1-ia7.salesforceliveagent.com/chat', '572Ho000000gCLW', '00DHo00000182Xh');
-</script>
 </head>
-
-
 <body>
 
+<div style="width:100%;height:100px;" id="LightningContainer"/>
 
+<script src="https://collins--salesdev.my.salesforce.com/lightning/lightning.out.js"></script>
 
-<a id="liveagent_button_online_573Ho000000gCMf" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573Ho000000gCMf')">ONLINE</a><div id="liveagent_button_offline_573Ho000000gCMf" style="display: none;">OFFLINE</div>
+<script type='text/javascript'>
 
-<script type="text/javascript">
-if (!window._laq) { window._laq = []; }
-window._laq.push(function(){liveagent.showWhenOnline('573Ho000000gCMf', document.getElementById('liveagent_button_online_573Ho000000gCMf'));
-liveagent.showWhenOffline('573Ho000000gCMf', document.getElementById('liveagent_button_offline_573Ho000000gCMf'));
-});</script>
+    $Lightning.use("c:SalesRequestApp",
+        function() {
+            $Lightning.createComponent(
+                "c:SalesRequestComponent",
+                { },
+                "LightningContainer",
+                function(cmp) { }
+            );
+        },
+        'https://salesdev-collins.cs32.force.com/servicesurveys'
+    );
+</script>
 
 </body>
 </html>
