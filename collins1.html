@@ -1,26 +1,15 @@
 <html>
 <head>
 </head>
+
+
 <body>
 
-<div style="width:100%;height:100px;" id="LightningContainer"/>
-
-<script src="https://collins--salesdev.my.salesforce.com/lightning/lightning.out.js"></script>
-
-<script type='text/javascript'>
-
-    $Lightning.use("c:SalesRequestApp",
-        function() {
-            $Lightning.createComponent(
-                "c:SalesRequestComponent",
-                { },
-                "LightningContainer",
-                function(cmp) { }
-            );
-        },
-        'https://salesdev-collins.cs32.force.com/servicesurveys'
-    );
-</script>
+<a id="liveagent_button_online_573Ho000000gCMf" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573Ho000000gCMf')"><!-- Online Chat Content --></a><div id="liveagent_button_offline_573Ho000000gCMf" style="display: none;"><!-- Offline Chat Content --></div><script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('573Ho000000gCMf', document.getElementById('liveagent_button_online_573Ho000000gCMf'));
+liveagent.showWhenOffline('573Ho000000gCMf', document.getElementById('liveagent_button_offline_573Ho000000gCMf'));
+});</script>
 
 </body>
 </html>
